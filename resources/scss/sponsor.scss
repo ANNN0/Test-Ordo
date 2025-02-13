@@ -1,0 +1,175 @@
+.sponsorship-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .sponsorship-header {
+        font-size: 40px;
+        font-weight: 700;
+        color: #112d63;
+        padding-top: 60px;
+    }
+
+    .sponsorship-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .individual-sponsorship,
+    .corporate-sponsorship-title {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    th {
+        background-color: #e0f6ff;
+        padding: 1rem;
+        font-weight: 500;
+    }
+
+    th:first-child {
+        border-radius: 10px 0 0 0;
+    }
+
+    th:last-child {
+        border-radius: 0 10px 0 0;
+    }
+
+    .sponsorship-table1 tr:last-child td {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .sponsorship-table1 {
+        border: 1px solid #abebff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .sponsor-table1 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 16px;
+        display: flex;
+        .sponsor-table1 th,
+        td {
+            padding: 1rem 1.7rem;
+        }
+
+        .tier-column {
+            text-align: left;
+            padding-left: 30px;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-right: 5px;
+            background-color: #518bbb;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 30px;
+        }
+
+        .action-button-support {
+            background-color: white;
+            color: #518bbb;
+            padding: 6px 18px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .tier-info {
+            display: flex;
+            flex-direction: row;
+
+            .tier-name {
+                padding-left: 10px;
+                font-weight: 500;
+            }
+        }
+
+        tr:nth-child(3),
+        tr:nth-child(5),
+        tr:nth-child(7) {
+            background-color: #f8fdff;
+        }
+    }
+
+    .divider {
+        width: 88%;
+        height: 1px;
+        background-color: #eeeeee;
+    }
+
+    .corporate-section {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sponsor-table2 {
+        display: flex;
+        justify-content: center;
+        width: 1100px;
+        text-align: center;
+        font-size: 16px;
+        display: flex;
+        border-collapse: collapse;
+        border: 1px solid #abebff;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .sponsor-table2 th,
+        td {
+            padding: 1rem 4rem;
+        }
+
+        tr:last-child td {
+            outline: 1px solid white;
+        }
+
+        .donation-section {
+            background-color: #518bbb;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+
+            .action-button-support {
+                background-color: white;
+                color: #518bbb;
+                width: 150px;
+                height: 40px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-radius: 30px;
+                align-items: center;
+            }
+        }
+
+        td:nth-child(2),
+        td:nth-child(4) {
+            display: flex;
+            justify-content: center;
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

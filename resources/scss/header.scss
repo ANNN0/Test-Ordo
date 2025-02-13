@@ -1,0 +1,211 @@
+header {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+    .left-section,
+    .right-section {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .left-section {
+        margin: 50px 0px 50px 70px;
+
+        .left-column-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-gh {
+            border: 1px solid #dddddd;
+            padding: 10px 23px;
+            border-radius: 30px;
+            font-weight: 400;
+            font-size: 16px;
+            width: 45%;
+        }
+
+        .headline {
+            margin-top: 16px;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 50px;
+            width: 650px;
+            letter-spacing: -0.4px;
+        }
+
+        .project-card {
+            border: 1px solid #eeeeee;
+            width: 589px;
+            height: 137px;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 2.33rem;
+            margin-bottom: 3.15rem;
+
+            .card-content {
+                display: flex;
+                justify-content: left;
+                flex-direction: row;
+                font-weight: 700;
+                align-items: center;
+                margin-top: -4px;
+                color: #336913;
+
+                .tree-count {
+                    font-family: "Inter Tight", serif;
+                    font-weight: 700;
+                    font-size: 30px;
+                    margin-left: 11px;
+
+                    .tree-label {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+
+                .support-section {
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 60px;
+                    color: white;
+                    background-color: #336913;
+                    padding: 11px 28.3px;
+                    border-radius: 30px;
+                    font-weight: 500;
+                    font-size: 15px;
+
+                    .support-button {
+                        padding-right: 3px;
+                    }
+                }
+            }
+
+            .progress-bar-container {
+                margin-top: 17.5px;
+                background-color: #eff7ef;
+                height: 15px;
+                width: 520px;
+                border-radius: 20px;
+                position: relative;
+
+                .progress-bar {
+                    position: absolute;
+                    height: 15px;
+                    width: 220px;
+                    background-color: #336913;
+                    border-radius: 20px;
+                }
+            }
+
+            .mangrove-image-container {
+                display: block;
+            }
+        }
+    }
+
+    .right-section {
+        border-left: 1px solid #eeeeee;
+
+        .leaderboard-container {
+            margin: 28px 0px 50px 45px;
+
+            .leaderboard-title {
+                cursor: context-menu;
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .most-donations {
+                border: 1px solid #85bb50;
+                display: inline-block;
+                padding: 10px 30px;
+                color: #2d9444;
+                font-weight: 600;
+                font-size: 18px;
+                border-radius: 30px;
+                margin-right: 8px;
+            }
+
+            .most-recent {
+                display: inline-block;
+                border: 1px solid #dddddd;
+                padding: 10px 30px;
+                color: #888888;
+                font-weight: 500;
+                font-size: 18px;
+                border-radius: 30px;
+            }
+        }
+    }
+
+    .leaderboard-entry {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 10px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #eeeeee;
+
+        .rank-number {
+            background-color: #336913;
+            color: white;
+            padding: 0.75rem 0.9rem;
+            border-radius: 70px;
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .rank-4 {
+            background-color: #85bb50;
+        }
+
+        .rank-5,
+        .rank-6 {
+            background-color: #a7cc05;
+        }
+
+        .unique-rank {
+            padding: 0.75rem 1rem;
+        }
+
+        .user-details {
+            padding-left: 0.4rem;
+
+            .user-role {
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            .user-name {
+                margin-top: -0.3rem;
+                font-size: 20px;
+                font-weight: 700;
+                width: 140px;
+            }
+        }
+
+        .tree-details {
+            color: #336913;
+            font-family: "Inter Tight", serif;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            padding-left: 3.8rem;
+
+            .total-trees {
+                padding-left: 0.3rem;
+                font-size: 22.5px;
+                font-weight: 700;
+
+                .tree-small {
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

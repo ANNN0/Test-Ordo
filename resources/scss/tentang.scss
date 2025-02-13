@@ -1,0 +1,66 @@
+.project-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .about-images {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .about-description {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        .description-text {
+            font-size: 18px;
+            color: #000000;
+            width: 880px;
+            text-align: center;
+            line-height: 27px;
+            font-weight: 300;
+        }
+    }
+
+    .before-after-images {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        position: relative;
+
+        .before-caption,
+        .after-caption {
+            text-align: center;
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        .image-transformation {
+            position: absolute;
+            display: flex;
+            width: 10%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            padding: 0 2rem 1rem;
+            justify-content: center;
+            top: 23%;
+
+            .transformation-title {
+                margin-top: -1rem;
+                color: #2d9444;
+            }
+        }
+    }
+}
