@@ -240,12 +240,12 @@ body {
             cursor: pointer;
             position: relative;
 
-            // Hide default date input styling when empty
+            // Hide default date format (dd/mm/yyyy) when empty - show custom placeholder instead
             &.empty {
-                color: transparent;
+                color: transparent !important;
             }
 
-            // Show text when it has value
+            // Show selected date when it has value
             &:not(.empty) {
                 color: var(--Text-Primary) !important;
             }
@@ -296,6 +296,7 @@ body {
             z-index: 1;
             user-select: none;
 
+            // Ensure "Start Date" and "End Date" text doesn't wrap
             &.start-placeholder,
             &.end-placeholder {
                 white-space: nowrap;

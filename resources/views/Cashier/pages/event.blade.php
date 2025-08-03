@@ -608,6 +608,8 @@
         });
 
         // Date Placeholder Management Function for Event Page
+        // Function ini memfokuskan untuk menampilkan "Start Date" dan "End Date" 
+        // serta menyembunyikan format default dd/mm/yyyy dari browser
         function updateDatePlaceholdersEvent() {
             const startDate = document.getElementById('startDateHistory');
             const endDate = document.getElementById('endDateHistory');
@@ -616,9 +618,11 @@
 
             if (startDate && startPlaceholder) {
                 if (startDate.value) {
+                    // Ada tanggal dipilih: sembunyikan placeholder, tampilkan tanggal
                     startDate.classList.remove('empty');
                     startPlaceholder.style.display = 'none';
                 } else {
+                    // Tidak ada tanggal: tampilkan "Start Date", sembunyikan format default
                     startDate.classList.add('empty');
                     startPlaceholder.style.display = 'block';
                 }
@@ -626,9 +630,11 @@
 
             if (endDate && endPlaceholder) {
                 if (endDate.value) {
+                    // Ada tanggal dipilih: sembunyikan placeholder, tampilkan tanggal
                     endDate.classList.remove('empty');
                     endPlaceholder.style.display = 'none';
                 } else {
+                    // Tidak ada tanggal: tampilkan "End Date", sembunyikan format default
                     endDate.classList.add('empty');
                     endPlaceholder.style.display = 'block';
                 }
