@@ -1,0 +1,1185 @@
+// Variabel warna
+$dark-bg: #242323;
+$dark-100: #242323;
+$text-light: #fff;
+$text-muted: #d3d3d3;
+$primary-orange: #fcbb65;
+$border-color: rgba(255, 255, 255, 0.1);
+
+:root {
+    --Dark-100: #232222;
+    --Dark-200: #282727;
+    --Dark-300: #2c2c2c;
+    --Dark-400: #363636;
+    --Primary-200: #fcbb65;
+    --Primary-100: #f7f2e1;
+    --Gray-100: #7b7878;
+    --Gray-200: #666666;
+    --Base-Brown: #c99249;
+    --Base-White: #fff;
+    --Text-Primary: #ffffff;
+    --Text-Secondary: #cccccc;
+    --Status-Success: #4caf50;
+    --Status-Failed: #f44336;
+
+    body {
+        background: #232222;
+        margin: 0;
+        padding: 0;
+    }
+
+    // ===== BODY SCROLL LOCK =====
+    body.modal-open {
+        overflow: hidden;
+    }
+
+    .messages-main {
+        margin-left: 200px;
+        padding: 56px 40px;
+        min-height: 100vh;
+        background: #282727;
+    }
+
+    .messages-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px 40px 20px 40px;
+        background: var(--Dark-200);
+        margin-left: -40px;
+        margin-right: -40px;
+        border-bottom: 1px solid var(--Dark-300);
+        margin-top: -32px;
+        position: relative;
+        top: 0;
+        z-index: 10;
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--Dark-100);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer; // CURSOR FIX
+
+            img {
+                width: 20px;
+                height: 20px;
+                filter: brightness(0) invert(1);
+                transition: filter 0.3s ease;
+            }
+
+            &:hover {
+                background: var(--Dark-100);
+                cursor: pointer; // CURSOR FIX
+                transform: scale(1.05);
+                img {
+                    filter: invert(70%) sepia(100%) saturate(2000%)
+                        hue-rotate(30deg) brightness(100%) contrast(100%);
+                }
+            }
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 600;
+            font-family: "Montserrat";
+            margin: 0;
+        }
+
+        .messages-header__right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    // ===== SECTION 1: CUSTOMER DETAILS =====
+    .customer-details-section {
+        margin-top: 30px;
+
+        .customer-cards-container {
+            display: grid;
+            grid-template-columns: 235px 1fr 200px;
+            gap: 15px;
+            align-items: start;
+        }
+
+        // Customer Photo (No Card)
+        .customer-photo-wrapper {
+            width: 235px;
+            height: 235px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .customer-card {
+            display: flex;
+            padding: 20px 1px 20px 20px;
+            flex-direction: column;
+            justify-content: center;
+            gap: 25px;
+            border-radius: 10px;
+            height: 200px;
+            background: var(--Dark-100, #242323);
+
+            // Description Card
+            &.desc-card {
+                .customer-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+
+                    .info-row {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 30px;
+
+                        .info-item {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 6px;
+
+                            .info-label {
+                                color: var(--Gray-100);
+                                font-family: "Montserrat";
+                                font-size: 13px;
+                                font-weight: 400;
+                            }
+
+                            .info-value {
+                                font-family: "Montserrat";
+                                font-size: 15px;
+                                font-weight: 600;
+                                font-style: normal;
+                                color: var(--Primary-200);
+                            }
+                        }
+                    }
+                }
+            }
+            &.qr-card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .qr-info {
+                    width: 100%;
+                    height: 105%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .qr-container {
+                        display: flex;
+                        width: 235px;
+                        padding: 20px;
+                        align-items: center;
+                        gap: 10px;
+                        align-self: stretch;
+
+                        .qr-code {
+                            flex: 1 0 0;
+                            margin-right: 18px;
+                            align-self: stretch;
+                            fill: var(--Base-White, #fff);
+                            justify-content: center;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== SECTION 3: TRANSACTION HISTORY =====
+    .transaction-history-section {
+        display: flex;
+        padding: 20px;
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        align-self: stretch;
+        border-radius: 10px;
+        background: var(--Dark-100);
+        border: 1px solid var(--Dark-300);
+
+        .transaction-history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 24px;
+
+            .table-header-left {
+                display: flex;
+                align-items: center;
+
+                .table-title {
+                    color: var(--Primary-200);
+                    font-family: "Montserrat";
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin: 0;
+                }
+            }
+
+            .table-header-right {
+                display: flex;
+                align-items: center;
+
+                .date-filter-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+
+                    .date-separator {
+                        color: var(--Gray-100);
+                        font-family: "Montserrat";
+                        font-size: 16px;
+                        font-weight: 500;
+                        margin: 0 5px;
+                        user-select: none;
+                    }
+
+                    .date-input-group {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+
+                        .calendar-icon {
+                            position: absolute;
+                            left: 12px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 16px;
+                            height: 16px;
+                            filter: brightness(0) invert(1);
+                            opacity: 0.6;
+                            pointer-events: none;
+                            z-index: 2;
+                            cursor: pointer; // CURSOR FIX
+                        }
+
+                        .date-input {
+                            padding: 15px 16px 15px 30px;
+                            background: var(--Dark-300);
+                            border: 1px solid var(--Dark-400);
+                            border-radius: 8px;
+                            color: var(--Text-Primary);
+                            font-family: "Montserrat";
+                            font-size: 14px;
+                            min-width: 140px;
+                            cursor: pointer; // CURSOR FIX
+                            position: relative;
+                            transition: all 0.2s ease;
+
+                            // Hide default date input styling when empty
+                            &.empty {
+                                color: transparent;
+                            }
+
+                            // Show text when it has value
+                            &:not(.empty) {
+                                color: var(--Text-Primary) !important;
+                            }
+
+                            &:focus {
+                                outline: none;
+                                border-color: var(--Primary-200);
+                                box-shadow: 0 0 0 2px rgba(252, 187, 101, 0.1);
+                                color: var(--Text-Primary) !important;
+                                cursor: text; // CURSOR FIX
+                            }
+
+                            &:hover {
+                                cursor: pointer; // CURSOR FIX
+                                border-color: var(--Dark-400);
+                            }
+
+                            // Enhanced calendar picker styling
+                            &::-webkit-calendar-picker-indicator {
+                                opacity: 1;
+                                cursor: pointer; // CURSOR FIX
+                                position: absolute;
+                                right: 12px;
+                                width: 16px;
+                                height: 16px;
+                                background: transparent;
+                                color: var(--Text-Primary);
+                                filter: brightness(0) invert(1);
+                                transition: all 0.2s ease;
+
+                                &:hover {
+                                    filter: brightness(0) invert(1) sepia(1)
+                                        saturate(5) hue-rotate(30deg);
+                                    cursor: pointer; // CURSOR FIX
+                                }
+                            }
+
+                            // Firefox date input styling
+                            &::-moz-focus-inner {
+                                border: 0;
+                            }
+                        }
+
+                        .date-placeholder {
+                            position: absolute;
+                            left: 40px;
+                            top: 50%;
+                            display: block;
+                            transform: translateY(-50%);
+                            color: var(--Gray-100);
+                            font-family: "Montserrat";
+                            font-size: 14px;
+                            pointer-events: none;
+                            transition: all 0.15s ease;
+                            z-index: 1;
+                            user-select: none;
+
+                            &.start-placeholder,
+                            &.end-placeholder {
+                                white-space: nowrap;
+                            }
+                        }
+
+                        // Hide placeholder when input is focused or has value
+                        .date-input:focus + .date-placeholder,
+                        .date-input:not(.empty) + .date-placeholder {
+                            opacity: 0;
+                            transform: translateY(-50%) translateX(-10px);
+                        }
+
+                        &:hover {
+                            .calendar-icon {
+                                opacity: 0.8;
+                                cursor: pointer; // CURSOR FIX
+                            }
+
+                            .date-input {
+                                border-color: var(--Dark-400);
+                                cursor: pointer; // CURSOR FIX
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .transaction-history-container {
+            border-radius: 10px;
+            border: 1px solid var(--Dark-300);
+            background: var(--Dark-100);
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+
+            .dataTables_wrapper {
+                padding: 0;
+                margin: 0;
+                position: relative;
+                z-index: 1;
+
+                .dataTables_length,
+                .dataTables_filter,
+                .dataTables_info,
+                .dataTables_paginate {
+                    display: none;
+                }
+
+                .dataTables_scroll {
+                    overflow: visible !important;
+                }
+
+                .dataTables_scrollHead,
+                .dataTables_scrollBody {
+                    overflow: visible !important;
+                }
+            }
+        }
+    }
+
+    // ===== TRANSACTION HISTORY TABLE =====
+    .transaction-history-table {
+        width: 100% !important;
+        border-collapse: collapse;
+        font-family: "Montserrat";
+        table-layout: fixed;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        background: transparent;
+
+        thead {
+            background: var(--Dark-100);
+            box-shadow: 0 -1px 0 0 #fcbb65 inset;
+
+            th {
+                padding: 15px 8px;
+                text-align: left;
+                color: var(--Primary-200);
+                font-weight: 600;
+                font-size: 14px;
+                border: none;
+                border-bottom: 1px solid var(--Dark-400);
+                position: relative;
+                vertical-align: middle;
+                cursor: pointer; // CURSOR FIX
+                background: transparent;
+                transition: all 0.2s ease;
+
+                &:last-child {
+                    text-align: center;
+                }
+
+                &.sorting,
+                &.sorting_asc,
+                &.sorting_desc {
+                    &::before,
+                    &::after {
+                        display: none !important;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer; // CURSOR FIX
+                    background: rgba(252, 187, 101, 0.1);
+                }
+
+                .th-icon {
+                    width: 16px;
+                    height: 16px;
+                    opacity: 0.8;
+                    display: inline-block !important;
+                    margin-left: 8px;
+                    vertical-align: middle;
+                    cursor: pointer; // CURSOR FIX
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                border: none;
+                background: var(--Dark-100);
+                transition: background-color 0.2s ease;
+                cursor: default;
+
+                &:hover {
+                    background: var(--Dark-200) !important;
+                    cursor: default;
+                }
+
+                &.dark-row {
+                    background: var(--Dark-200);
+
+                    &:hover {
+                        background: var(--Dark-300) !important;
+                        cursor: default;
+                    }
+                }
+
+                td {
+                    padding: 15px 8px;
+                    color: var(--Text-Secondary);
+                    font-size: 14px;
+                    vertical-align: middle;
+                    font-weight: 400;
+                    border: none;
+
+                    &:last-child {
+                        text-align: center;
+                    }
+
+                    &:first-child {
+                        color: var(--Text-Primary);
+                        font-weight: 500;
+                    }
+
+                    &:nth-child(2) {
+                        color: var(--Text-Primary);
+                    }
+
+                    &:nth-child(3) {
+                        color: var(--Text-Secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== TRANSACTION HISTORY PAGINATION =====
+    .transaction-history-pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Montserrat";
+        font-size: 14px;
+        padding: 16px 20px;
+        border-top: 1px solid #4a4949;
+        background: var(--Dark-100);
+
+        .pagination-row {
+            color: var(--Primary-200);
+            font-weight: 500;
+        }
+
+        .pagination-page {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--Primary-200);
+            font-weight: 500;
+
+            .pagination-nav {
+                background: transparent;
+                border: none;
+                color: var(--Primary-200);
+                font-size: 18px;
+                cursor: pointer; // CURSOR FIX
+                padding: 4px 8px;
+                border-radius: 4px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: var(--Dark-400);
+                    cursor: pointer; // CURSOR FIX
+                    transform: scale(1.1);
+                }
+
+                &.prev {
+                    margin-left: 8px;
+                }
+
+                &.disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed !important; // CURSOR FIX
+
+                    &:hover {
+                        background: transparent;
+                        cursor: not-allowed !important; // CURSOR FIX
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== ACTION DROPDOWN =====
+    .action-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .action-btn {
+        background: transparent;
+        border: none;
+        color: #888;
+        cursor: pointer; // CURSOR FIX
+        padding: 8px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        transition: all 0.2s ease;
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            path {
+                fill: #888;
+                transition: fill 0.2s ease;
+            }
+        }
+
+        &:hover {
+            background: #4a4949;
+            cursor: pointer; // CURSOR FIX
+            transform: scale(1.05);
+
+            svg path {
+                fill: var(--Text-Primary);
+            }
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--Dark-300);
+        border: 1px solid var(--Dark-400);
+        border-radius: 8px;
+        min-width: 150px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            color: var(--Text-Secondary);
+            text-decoration: none;
+            font-family: "Montserrat";
+            font-size: 14px;
+            border-bottom: 1px solid var(--Dark-400);
+            transition: all 0.2s ease;
+            cursor: pointer; // CURSOR FIX
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background: var(--Dark-400);
+                color: var(--Text-Primary);
+                text-decoration: none;
+                cursor: pointer; // CURSOR FIX
+                transform: translateX(2px);
+            }
+
+            &.detail {
+                color: var(--Primary-200);
+                cursor: pointer; // CURSOR FIX
+
+                &:hover {
+                    background: var(--Dark-400);
+                    color: var(--Primary-200);
+                    text-decoration: none;
+                    cursor: pointer; // CURSOR FIX
+                }
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
+                opacity: 0.6;
+
+                path {
+                    fill: currentColor;
+                }
+            }
+        }
+    }
+}
+
+// ===== MODAL STYLES WITH CURSOR IMPROVEMENTS =====
+.transaction-detail-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    cursor: default; // CURSOR FIX
+
+    &.show-modal {
+        display: flex !important;
+        opacity: 1;
+        visibility: visible;
+        cursor: default; // CURSOR FIX
+    }
+
+    &::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        background: transparent !important;
+    }
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+
+    .modal-content {
+        background: $dark-bg !important;
+        padding: 0 !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+        color: $text-light !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        margin: 0 !important;
+        transform: scale(0.7);
+        transition: transform 0.3s ease-in-out;
+        cursor: default; // CURSOR FIX
+
+        .transaction-detail-modal.show-modal & {
+            transform: scale(1);
+        }
+
+        &::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            background: transparent !important;
+        }
+
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+
+        .modal-header {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 15px 20px !important;
+            border-bottom: 1px solid $border-color !important;
+            position: relative !important;
+            margin: 0 !important;
+
+            .transaction-id-title {
+                color: var(--Base-White, #fff) !important;
+                text-align: center !important;
+                font-family: "Montserrat" !important;
+                font-size: 16px !important;
+                font-style: normal !important;
+                font-weight: 600 !important;
+                line-height: normal !important;
+                letter-spacing: -0.8px !important;
+                margin: 0 !important;
+
+                span {
+                    font-weight: normal !important;
+                    margin-left: 5px !important;
+                }
+            }
+
+            // CLOSE BUTTON IMPROVEMENTS
+            .close-modal-btn {
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer !important; // CURSOR FIX
+                padding: 4px !important;
+                margin: 0 !important;
+                border-radius: 4px !important;
+                transition: all 0.2s ease !important;
+                position: absolute !important;
+                right: 15px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                
+                &:hover {
+                    background: rgba(255, 255, 255, 0.1) !important;
+                    cursor: pointer !important; // CURSOR FIX
+                    transform: translateY(-50%) scale(1.05) !important;
+                }
+                
+                &:focus {
+                    outline: 2px solid var(--Primary-200) !important;
+                    outline-offset: 2px !important;
+                    cursor: pointer !important; // CURSOR FIX
+                }
+            }
+
+            .close-modal-icon {
+                position: relative !important;
+                width: 20px !important;
+                height: 20px !important;
+                cursor: pointer !important; // CURSOR FIX
+                opacity: 0.8 !important;
+                transition: all 0.2s ease !important;
+
+                &:hover {
+                    opacity: 1 !important;
+                    cursor: pointer !important; // CURSOR FIX
+                    transform: scale(1.1) !important;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 20px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 5px !important;
+
+            .section {
+                padding-bottom: 15px !important;
+                margin-bottom: 0 !important;
+
+                &:last-of-type {
+                    border-bottom: none !important;
+                    padding-bottom: 0 !important;
+                }
+
+                &:not(:last-child)::after {
+                    content: "" !important;
+                    display: block !important;
+                    width: 100% !important;
+                    height: 1px !important;
+                    background: $border-color !important;
+                    margin-top: 15px !important;
+                }
+            }
+
+            .section-title {
+                color: var(--Primary-200, #fcbb65) !important;
+                font-family: "Montserrat" !important;
+                font-size: 16px !important;
+                font-style: normal !important;
+                font-weight: 600 !important;
+                line-height: normal !important;
+                letter-spacing: -0.8px !important;
+                margin: 0 0 10px 0 !important;
+                text-align: left !important;
+            }
+
+            .customer {
+                color: var(--Gray-100, #7b7878) !important;
+                font-family: "Montserrat" !important;
+                font-size: 13px !important;
+                font-style: normal !important;
+                font-weight: 400 !important;
+                line-height: normal !important;
+                letter-spacing: -0.65px !important;
+            }
+
+            .info-item {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                margin-bottom: 5px !important;
+
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+
+                .info-label {
+                    font-weight: 500 !important;
+                    color: $text-muted !important;
+                    font-size: 13px !important;
+                    font-family: "Montserrat" !important;
+                }
+
+                .info-value {
+                    font-weight: 400 !important;
+                    color: $text-light !important;
+                    font-size: 13px !important;
+                    font-family: "Montserrat" !important;
+                }
+            }
+
+            .customer-section {
+                .customer-info-wrapper {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: flex-start !important;
+                    gap: 10px !important;
+
+                    .customer-details {
+                        flex-grow: 1 !important;
+                    }
+
+                    .customer-name {
+                        color: var(--Primary-200, #fcbb65) !important;
+                        font-family: "Montserrat" !important;
+                        font-size: 16px !important;
+                        font-style: normal !important;
+                        font-weight: 600 !important;
+                        line-height: normal !important;
+                        letter-spacing: -0.8px !important;
+                        margin-top: 2px !important;
+                        margin-bottom: 4px !important;
+                    }
+
+                    .member-id {
+                        color: var(--Gray-100, #7b7878) !important;
+                        font-family: "Montserrat" !important;
+                        font-size: 13px !important;
+                        font-style: normal !important;
+                        font-weight: 400 !important;
+                        line-height: normal !important;
+                        letter-spacing: -0.65px !important;
+                        margin-top: 2px !important;
+                        margin-bottom: 1px !important;
+                    }
+
+                    .member-id-value {
+                        color: var(--Primary-200, #fcbb65) !important;
+                        font-family: "Montserrat" !important;
+                        font-size: 16px !important;
+                        font-style: normal !important;
+                        font-weight: 600 !important;
+                        line-height: normal !important;
+                        letter-spacing: -0.8px !important;
+                        margin-top: 1px !important;
+                    }
+
+                    .qr-code {
+                        width: 70px !important;
+                        height: 70px !important;
+                        display: flex !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        border-radius: 5px !important;
+
+                        img {
+                            max-width: 100% !important;
+                            max-height: 100% !important;
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+
+            .product-section {
+                .product-list {
+                    margin-top: 8px !important;
+                }
+
+                .product-item {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    margin-bottom: 6px !important;
+
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+
+                    .product-name {
+                        font-size: 13px !important;
+                        color: $text-light !important;
+                        font-family: "Montserrat" !important;
+                        font-weight: 400 !important;
+                    }
+
+                    .product-qty {
+                        font-size: 13px !important;
+                        color: $text-muted !important;
+                        font-family: "Montserrat" !important;
+                        font-weight: 400 !important;
+                    }
+                }
+            }
+
+            .summary-section {
+                .summary-list {
+                    margin-top: 8px !important;
+                }
+
+                .summary-item {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    margin-bottom: 6px !important;
+
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+
+                    .summary-label {
+                        color: var(--Gray-200, #a9a3a3) !important;
+                        text-align: left !important;
+                        font-family: "Montserrat" !important;
+                        font-size: 13px !important;
+                        font-style: normal !important;
+                        font-weight: 400 !important;
+                        line-height: normal !important;
+                        margin-bottom: 0px !important;
+                        letter-spacing: -0.65px !important;
+                    }
+
+                    .summary-value {
+                        font-size: 13px !important;
+                        color: $text-light !important;
+                        font-weight: 500 !important;
+                        font-family: "Montserrat" !important;
+
+                        .qty-multiplier {
+                            color: $text-muted !important;
+                            margin-left: 5px !important;
+                            font-size: 12px !important;
+                            font-weight: 400 !important;
+                        }
+                    }
+
+                    &.promo-item {
+                        .summary-label {
+                            color: var(--Gray-200, #a9a3a3) !important;
+                            text-align: left !important;
+                            font-family: "Montserrat" !important;
+                            font-size: 13px !important;
+                            font-style: normal !important;
+                            font-weight: 400 !important;
+                            line-height: normal !important;
+                            letter-spacing: -0.65px !important;
+                            margin-top: 0 !important;
+                        }
+
+                        .summary-value {
+                            color: $primary-orange !important;
+                            font-weight: 600 !important;
+                            font-size: 13px !important;
+                            font-family: "Montserrat" !important;
+
+                            &.discount {
+                                color: $primary-orange !important;
+                                font-family: "Montserrat" !important;
+                                font-size: 13px !important;
+                                font-style: normal !important;
+                                font-weight: 600 !important;
+                                line-height: normal !important;
+                                letter-spacing: -0.65px !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .totals-section {
+                .info-item {
+                    margin-bottom: 6px !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+
+                    .info-label {
+                        font-weight: 400 !important;
+                        color: $text-muted !important;
+                        font-size: 13px !important;
+                        font-family: "Montserrat" !important;
+                    }
+
+                    .info-value {
+                        font-weight: 500 !important;
+                        color: $text-light !important;
+                        font-size: 13px !important;
+                        font-family: "Montserrat" !important;
+                    }
+
+                    &.subtotal {
+                        .info-label,
+                        .info-value {
+                            font-size: 14px !important;
+                            font-weight: 500 !important;
+                        }
+                    }
+
+                    &.tax {
+                        .info-value {
+                            font-size: 13px !important;
+                        }
+
+                        .tax-percentage {
+                            color: $text-muted !important;
+                            font-size: 11px !important;
+                            margin-left: 3px !important;
+                            font-weight: 400 !important;
+                        }
+                    }
+
+                    &.total-amount {
+                        border-top: 1px solid $border-color !important;
+                        padding-top: 8px !important;
+                        margin-top: 4px !important;
+
+                        .info-label,
+                        .info-value {
+                            color: var(--Base-White, #fff) !important;
+                            font-family: "Montserrat" !important;
+                            font-size: 16px !important;
+                            font-style: normal !important;
+                            font-weight: 600 !important;
+                            line-height: normal !important;
+                            letter-spacing: -0.8px !important;
+                        }
+                    }
+
+                    &.points-earned {
+                        .info-label,
+                        .info-value {
+                            color: var(--Primary-200, #fcbb65) !important;
+                            font-family: "Montserrat" !important;
+                            font-size: 14px !important;
+                            font-style: normal !important;
+                            font-weight: 600 !important;
+                            line-height: normal !important;
+                            letter-spacing: -0.8px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ===== ADDITIONAL CURSOR IMPROVEMENTS =====
+.close-modal-btn,
+.close-modal-icon,
+.dropdown-item,
+.action-btn,
+.back-button,
+.date-input,
+.calendar-icon,
+.pagination-nav:not(.disabled),
+.th-icon {
+    cursor: pointer !important;
+}
+
+.pagination-nav.disabled {
+    cursor: not-allowed !important;
+}
+
+// Enhanced hover effects
+.close-modal-icon:hover {
+    transform: scale(1.1) !important;
+}
+
+.close-modal-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+}
+
+.close-modal-btn:focus {
+    outline: 2px solid var(--Primary-200) !important;
+    outline-offset: 2px !important;
+    border-radius: 4px !important;
+}
